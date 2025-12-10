@@ -234,6 +234,9 @@ async def get_chat_info(chat, message):
     verified = (
         "Yes" if hasattr(chat_obj_info, "verified") and chat_obj_info.verified else "No"
     )
+    etg = (
+        "Yes"
+    )
     username = "@{}".format(username) if username else None
     creator_username = "@{}".format(creator_username) if creator_username else None
 
