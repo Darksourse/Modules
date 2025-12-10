@@ -112,7 +112,7 @@ async def get_user_info(user, message):
     is_bot = "Yes" if uuser.bot else "No"
     restricted = "Yes" if uuser.restricted else "No"
     verified = "Yes" if uuser.verified else "No"
-    etg = "Yes" if uuser.etg else "No"
+    etg = "Yes" if uuser.verified else "No"
 
     photo = await message.client.download_profile_photo(
         user_id, str(user_id) + ".jpg", download_big=True
@@ -163,7 +163,7 @@ async def get_chat_info(chat, message):
     creator_firstname = (
         msg_info.users[0].first_name
         if creator_valid and msg_info.users[0].first_name is not None
-        else "УYesлённый аккаунт"
+        else "Удалённый аккаунт"
     )
     creator_username = (
         msg_info.users[0].username
