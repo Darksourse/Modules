@@ -107,7 +107,7 @@ async def get_user_info(user, message):
     first_name = uuser.first_name or "null"
     last_name = uuser.last_name or "null"
     username = uuser.username or "null"
-    user_bio = user.about or "null"
+    user_bio = "@" + user.about or "null"
     common_chat = user.common_chats_count
     is_bot = "Yes" if uuser.bot else "No"
     restricted = "Yes" if uuser.restricted else "No"
@@ -121,7 +121,7 @@ async def get_user_info(user, message):
         f"<b>USER INFORMATION:</b>\n\n"
         f"<b>First name:</b> {first_name}\n"
         f"<b>Last name:</b> {last_name}\n"
-        f"<b>Username:</b> @{username}\n"
+        f"<b>Username:</b> {username}\n"
         f"<b>ID:</b> <code>{user_id}</code>\n"
         f"<b>Bot:</b> {is_bot}\n"
         f"<b>Restricted:</b> {restricted}\n"
