@@ -112,6 +112,7 @@ async def get_user_info(user, message):
     is_bot = "Yes" if uuser.bot else "No"
     restricted = "Yes" if uuser.restricted else "No"
     verified = "Yes" if uuser.verified else "No"
+    etg = "Yes" if uuser.etg else "No"
 
     photo = await message.client.download_profile_photo(
         user_id, str(user_id) + ".jpg", download_big=True
@@ -125,6 +126,7 @@ async def get_user_info(user, message):
         f"<b>Bot:</b> {is_bot}\n"
         f"<b>Restricted:</b> {restricted}\n"
         f"<b>Verified:</b> {verified}\n\n"
+        f"<b>Supporter:</b> {etg}\n\n"
         f"<b>About:</b> \n<code>{user_bio}</code>\n\n"
         f"<b>Number of avatars in the profile:</b> {user_photos_count}\n"
         f"<b>Shared Chats:</b> {common_chat}\n"
